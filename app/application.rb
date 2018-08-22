@@ -1,3 +1,4 @@
+require 'pry'
 class Application
 
   def call(env)
@@ -8,6 +9,7 @@ class Application
 
     if now < noon
       resp.write "Good Morning!"
+      binding.pry
     else
       resp.write "Good Afternoon!"
     end
