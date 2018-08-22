@@ -6,7 +6,7 @@ class Application
     now = Time.now
     noon = now.replace(hour=12, minute=0, second=0, microsecond=0)
 
-    if Time.now(hour,min,sec) < Time.new(12,00,00)
+    if now < noon 
       resp.write "Good Morning!"
     else
       resp.write "Good Afternoon!"
