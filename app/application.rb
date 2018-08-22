@@ -1,4 +1,4 @@
-require 'pry'
+
 class Application
 
   def call(env)
@@ -8,7 +8,6 @@ class Application
     noon = Time.now(hour=12, minute=0, second=0, microsecond=0)
 
     if now < noon
-      binding.pry
       resp.write "Good Morning!"
     else
       resp.write "Good Afternoon!"
