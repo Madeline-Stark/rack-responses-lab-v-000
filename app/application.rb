@@ -4,10 +4,10 @@ class Application
   def call(env)
     resp = Rack::Response.new
 
-    now = Time.now.utc.strftime
-    noon = Time.now.utc.strftime(hour=12, minute=0, second=0, microsecond=0)
+    now = Time.now
+    noon = Time.now(hour=12, minute=0, second=0, microsecond=0)
 
-    if now < noon
+    if now.hour < noon.hour
       resp.write "Good Morning!"
     else
       resp.write "Good Afternoon!"
